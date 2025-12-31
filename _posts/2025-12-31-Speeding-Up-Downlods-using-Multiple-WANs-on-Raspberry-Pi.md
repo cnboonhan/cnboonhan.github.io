@@ -39,8 +39,7 @@ tags:
   - Infrastructure
 ---
 
-# Background
-We may often find ourselves in situations needing to download large files. However, our download link may not always have enough bandwidth, or we could be rate-limited. Wireless@SGx, for example, is widely used but has a limit of 5Mbps (although practically it could reach 30Mbps).
+We may often find ourselves in situations needing to download large files. However, our download link may not always have enough bandwidth, or we could be rate-limited. Wireless@SGx, for example, is widely used but has a limit of 5Mbps (although practically it could reach 30Mbps). How could we improve this?
 
 # Idea
 Large downloads are often the result of having to download multiple files in aggregate. For example, a model checkpoint download often contains multiple `.safetensor` files. If we have multiple authenticated WANs on a router, we should be able to load balance the individual downloads among these WANs.
