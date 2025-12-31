@@ -6,10 +6,10 @@ tags:
   - Infrastructure
 ---
 
-We may often find ourselves in situations needing to download large files. However, our download link may not always have enough bandwidth, or we could be rate-limited. Wireless@SGx, for example, is widely used but has a limit of 5Mbps (although practically it could reach 30Mbps). How could we improve this?
+We may often find ourselves in situations needing to download large files. However, our download link may not always have enough bandwidth, or we could be rate-limited by the WAN provider. Wireless@SGx, for example, is widely used but has a limit of 5Mbps (although practically it could reach 30Mbps). How could we improve this?
 
 # Idea
-Large downloads are often the result of having to download multiple files in aggregate. For example, a model checkpoint download often contains multiple `.safetensor` files. If we have multiple authenticated WANs on a router, we should be able to load balance the individual downloads among these WANs.
+Large downloads are often the result of having to download multiple files in aggregate. For example, a model checkpoint download often contains multiple `.safetensor` files. If we have multiple authenticated WANs on a router, we should be able to load balance the individual downloads among these WANs and utilize a larger overall bandwidth.
 
 # Requirements
 In this example, I am utilizing two WANs links. One link will use the onboard Wifi chipset. Another link will use USB tethering from a phone. Modify accordingly if you increase number of WANs / use Ethernet etc. 
@@ -46,4 +46,4 @@ If you intend to use USB Wifi Adapter, do take note of [firmware compatibility.]
 10. Run on SSH terminal multiple times: `wget -qO- https://ipecho.net/plain ; echo`
 ![alt text](https://cnboonhan.github.io/files/blog/blog-download-speedup/load-balancing-result-openwrt.png)
 
-In theory, this arrangement should allow you to load balance multiple download HTTP requests across your WANs. 
+In theory, this arrangement should allow you to load balance multiple download HTTP requests across your WANs. An additional benefit is the automatic failover that triggers on link failure.
