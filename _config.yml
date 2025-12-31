@@ -26,9 +26,9 @@ author:
   avatar           : "profile.png"
   name             : "CN Boon Han"
   pronouns         : "He/Him"  
-  bio              : "I love to learn and build! Currently working on Embodied AI Models and Infrastructure."
+  bio              : "I love to learn and build! Currently interested in Embodied AI 🤖, Languages 🗣️ and Hiking ⛰️"
   location         : "Singapore"
-  employer         : "Home Team Science and Technology Agency"
+  employer         : "Home Team Science & Tech Agency"
   uri              : # URL
   email            : "cnboonhan.public@gmail.com" 
 
@@ -221,9 +221,6 @@ kramdown:
 
 # These settings control the types of collections used by the template
 collections:
-  teaching:
-    output: true
-    permalink: /:collection/:path/
   publications:
     output: true
     permalink: /:collection/:path/
@@ -255,15 +252,6 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _teaching
-  - scope:
-      path: ""
-      type: teaching
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
   # _publications
   - scope:
       path: ""
