@@ -29,8 +29,8 @@ In this example, I am utilizing two WANs links. One link will use the onboard Wi
 5. Access Router over `ssh root@192.168.1.1`
 6. `opkg update && opkg install kmod-usb-net-rndis kmod-usb-net-cdc-ether usbutils `
 7. Connect phone and activate USB tethering. On the Admin page, add a new DHCP client with the usb0 interface. Assign it to LAN firewall zone.
-![Create USB Interface OpenWRT](images/blog-download-speedup/create-usb-interface-openwrt.png)
-![Firewall Zone for USB Interface](images/blog-download-speedup/usb-interface-firewall-zone-openwrt.png)
+![Create USB Interface OpenWRT](https://cnboonhan.github.io/files/blog/blog-download-speedup/create-usb-interface-openwrt.png)
+![Firewall Zone for USB Interface](https://cnboonhan.github.io/files/blog/blog-download-speedup/usb-interface-firewall-zone-openwrt.png)
 
 8. ---
 title: 'Speeding Up Downloads using Multiple WANs on Raspberry Pi'
@@ -61,17 +61,17 @@ In this example, I am utilizing two WANs links. One link will use the onboard Wi
 5. Access Router over `ssh root@192.168.1.1`
 6. `opkg update && opkg install kmod-usb-net-rndis kmod-usb-net-cdc-ether usbutils luci-app-mwan3`
 7. On the Admin page, add a new DHCP client with the `usb0` interface. Assign it to `wwan` firewall zone. Ensure that a gateway metric is set for the `usb0` and `wwan` interfaces. Set slightly different values for each (`usb0` to `20`, `wwan` to `10`, for example.)
-![Create USB Interface OpenWRT](_posts/images/blog-download-speedup/create-usb-interface-openwrt.png)
-![Firewall Zone for USB Interface](_posts/images/blog-download-speedup/usb-interface-firewall-zone-openwrt.png)
-![alt text](_posts/images/blog-download-speedup/set-gateway-metric-openwrt.png)
+![Create USB Interface OpenWRT](https://cnboonhan.github.io/files/blog/blog-download-speedup/create-usb-interface-openwrt.png)
+![Firewall Zone for USB Interface](https://cnboonhan.github.io/files/blog/blog-download-speedup/usb-interface-firewall-zone-openwrt.png)
+![alt text](https://cnboonhan.github.io/files/blog/blog-download-speedup/set-gateway-metric-openwrt.png)
 8. Configure the MultiWAN Manager under `cgi-bin/luci/admin/network/mwan3` with the following:
-![alt text](_posts/images/blog-download-speedup/interfaces-openwrt.png)
-![alt text](_posts/images/blog-download-speedup/multiwan-globals-openwrt.png)
-![alt text](_posts/images/blog-download-speedup/multiwan-interfaces-openwrt.png)
-![alt text](_posts/images/blog-download-speedup/multiwan-members-openwrt.png)
-![alt text](_posts/images/blog-download-speedup/multiwan-policies-openwrt.png)
-![alt text](_posts/images/blog-download-speedup/multiwan-rules-openwrt.png)
+![alt text](https://cnboonhan.github.io/files/blog/blog-download-speedup/interfaces-openwrt.png)
+![alt text](https://cnboonhan.github.io/files/blog/blog-download-speedup/multiwan-globals-openwrt.png)
+![alt text](https://cnboonhan.github.io/files/blog/blog-download-speedup/multiwan-interfaces-openwrt.png)
+![alt text](https://cnboonhan.github.io/files/blog/blog-download-speedup/multiwan-members-openwrt.png)
+![alt text](https://cnboonhan.github.io/files/blog/blog-download-speedup/multiwan-policies-openwrt.png)
+![alt text](https://cnboonhan.github.io/files/blog/blog-download-speedup/multiwan-rules-openwrt.png)
 9. Run on SSH terminal: `mwan3 status`. Verify that both WANs are online, and the load balancing ratio is 50/50.
-![alt text](_posts/images/blog-download-speedup/multiwan-status-openwrt.png)
+![alt text](https://cnboonhan.github.io/files/blog/blog-download-speedup/multiwan-status-openwrt.png)
 10. Run on SSH terminal multiple times: `wget -qO- https://ipecho.net/plain ; echo`
-![alt text](_posts/images/blog-download-speedup/load-balancing-result-openwrt.png)
+![alt text](https://cnboonhan.github.io/files/blog/blog-download-speedup/load-balancing-result-openwrt.png)
